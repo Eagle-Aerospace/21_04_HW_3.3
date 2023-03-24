@@ -20,7 +20,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener  {
 
-    private final String DATA_STREAM = "http://online.radiorecord.ru:8101/rr_128"; // ссылка на аудио поток
+    private final String DATA_STREAM = "http://ep128.hostingradio.ru:8030/ep128"; // ссылка на аудио поток
     private static final String DATA_SD = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC) + "/music.mp3"; // патч на аудио-файл с SD-карты
     private String nameAudio = ""; // название контента
 
@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
                     mediaPlayer.prepareAsync(); // ассинхронная подготовка плейера к проигрыванию
 //                    mediaPlayer.prepare(); // ассинхронная подготовка плеера к проигрыванию
 //                    mediaPlayer.start(); // ассинхронная подготовка плеера к проигрыванию
-
                     nameAudio = "РАДИО"; // инициализация названия контента
                     textOut.setText(nameAudio + "\n(проигрывание " + mediaPlayer.isPlaying() + ", время " + mediaPlayer.getCurrentPosition()
                             + ",\nповтор " + mediaPlayer.isLooping() + ", громкость " + audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) + ")");
